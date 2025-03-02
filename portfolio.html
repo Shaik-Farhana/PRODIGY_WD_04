@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shaik Farhana - Web Developer & Data Science Enthusiast</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="floating-bg"></div>
+    <div class="floating-bg"></div>
+
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#stack">Tech Stack</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <img src="osaeagi.jpg" alt="Shaik Farhana">
+        <h1>Shaik Farhana</h1>
+        <p>Web Developer & Aspiring Data Scientist</p>
+    </header>
+
+    <section id="about" class="about">
+        <h2>About Me</h2>
+        <p class="about__description">
+            I'm a passionate web developer with expertise in creating responsive web applications and a growing interest in data science. 
+            My skill set includes modern web technologies and I'm currently expanding my knowledge in machine learning and data analysis. 
+            I love solving complex problems and creating user-friendly digital experiences.
+        </p>
+    </section>
+
+    <section id="projects" class="projects">
+        <h2>Featured Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <h3>Responsive Landing Page</h3>
+                <p>Modern landing page built with HTML5, CSS3, and JavaScript. Features include smooth scrolling, responsive design, and animated elements.</p>
+                <div class="project-tech">
+                    <span>HTML5</span>
+                    <span>CSS3</span>
+                    <span>JavaScript</span>
+                </div>
+                <a href="https://shaik-farhana.github.io/PRODIGY_TrackCode_Task-Number-1/" class="project-link">View Demo</a>
+            </div>
+            
+            <div class="project-card">
+                <h3>Stopwatch Web App</h3>
+                <p>Fully functional stopwatch with start/stop/reset functionality, lap recording, and time persistence using LocalStorage.</p>
+                <div class="project-tech">
+                    <span>JavaScript</span>
+                    <span>CSS Animations</span>
+                </div>
+                <a href="https://shaik-farhana.github.io/PRODIGY_WD_02/" class="project-link">View Demo</a>
+            </div>
+            
+            <div class="project-card">
+                <h3>Tic-Tac-Toe Game</h3>
+                <p>Interactive two-player game with AI opponent mode, built with vanilla JavaScript and featuring a clean, modern interface.</p>
+                <div class="project-tech">
+                    <span>JavaScript</span>
+                    <span>HTML5 Canvas</span>
+                </div>
+                <a href="https://shaik-farhana.github.io/PRODIGY_WD_03/" class="project-link">View Demo</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="stack" class="stack">
+        <h2>Tech Stack</h2>
+        <ul class="stack__list">
+            <li class="tech-item">HTML5</li>
+            <li class="tech-item">CSS3</li>
+            <li class="tech-item">JavaScript</li>
+            <li class="tech-item">React</li>
+            <li class="tech-item">Python</li>
+            <li class="tech-item">Pandas</li>
+            <li class="tech-item">NumPy</li>
+            <li class="tech-item">Git</li>
+        </ul>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2>Contact</h2>
+        
+        <div class="contact-form">
+            <h3>Send me a message</h3>
+            <form id="contactForm">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" name="subject" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send Message</button>
+                <div class="form-message" id="formMessage">Message sent successfully!</div>
+            </form>
+        </div>
+
+    </section>
+
+    <script>
+        // Smooth Scroll Effect for Navigation Links
+document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href').substring(1);
+        document.getElementById(targetId).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
+
+// Contact Form Validation
+document.querySelector('.contact-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const message = document.getElementById('message').value.trim();
+
+    if (name === '' || email === '' || message === '') {
+        alert('Please fill out all fields.');
+        return;
+    }
+    if (!email.includes('@') || !email.includes('.')) {
+        alert('Please enter a valid email.');
+        return;
+    }
+    alert('Message sent successfully!');
+    this.reset();
+});
+
+        // Simple form submission handling
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Show success message
+            document.getElementById('formMessage').style.display = 'block';
+            
+            // Reset form after 3 seconds
+            setTimeout(() => {
+                document.getElementById('contactForm').reset();
+                document.getElementById('formMessage').style.display = 'none';
+            }, 3000);
+        });
+    </script>
+</body>
+</html>
+    <footer>
+        <p>Made with ❤️ by Shaik Farhana</p>
+    </footer>
+</body>
+</html>
